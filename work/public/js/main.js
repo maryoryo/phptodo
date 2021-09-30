@@ -4,7 +4,25 @@
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', () => {
-      checkbox.parentNode.submit();
+      // const url = '?action=toggle';
+      // const options = {
+      //   method: 'POST',
+      //   body: new URLSearchParams({
+      //     id: checkbox.CDATA_SECTION_NODE.id,
+      //     token: checkbox.CDATA_SECTION_NODE.token,
+      //   }),
+      // };
+
+      // fetch(url, options);
+      fetch('?action=toggle', {
+        method: 'POST',
+        body: new URLSearchParams({
+          id: checkbox.CDATA_SECTION_NODE.id,
+          token: checkbox.CDATA_SECTION_NODE.token,
+        }),
+      });
+      // checkbox.parentNode.submit();
+      checkbox.nextElementSibling.classList.toggle('done');
     });
   });
   
