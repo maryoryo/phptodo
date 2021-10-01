@@ -22,7 +22,7 @@
         }),
       });
       // checkbox.parentNode.submit();
-      checkbox.nextElementSibling.classList.toggle('done');
+      // checkbox.nextElementSibling.classList.toggle('done');
     });
   });
   
