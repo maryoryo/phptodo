@@ -26,10 +26,14 @@ $todos = $todo->getAll();
   <main>
     <header>
       <h1>Todos</h1>
-      <form action="?action=purge" method="post">
-        <span class="purge">Purge</span>
-        <input type="hidden" name="token" value="<?= Utils::h($_SESSION['token']) ?>">
-      </form>
+      <!-- <form action="?action=purge" method="post"> -->
+        <span
+          data-token="<?= Utils::h($_SESSION['token']) ?>"
+          class="purge">
+          Purge
+        </span>
+        <!-- <input type="hidden" name="token" value=""> -->
+      <!-- </form> -->
     </header>
 
     <form action="?action=add" method="post">
